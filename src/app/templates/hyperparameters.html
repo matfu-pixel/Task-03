@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %} Choose hyperparameters page {% endblock %}
+{% block content %}
+
+<form method='POST' action={{ url_for('set_hyper', type=type, name=name) }}>
+    {{ form.csrf_token }}
+    <div class="main_form">
+        <div>
+            {{ form.n_estimators.label }}
+            {{ form.n_estimators(class_="form_field") }}
+        </div>
+        <div>
+            {{ form.feature_subsample_size.label }}
+            {{ form.feature_subsample_size(class_="form_field") }}
+        </div>
+        <div>
+            {{ form.max_depth.label }}
+            {{ form.max_depth(class_="form_field") }}
+        </div>
+        {% if type == 'GradientBoosting' %}
+        <div>
+            {{ form.learning_rate.label }}
+            {{ form.learning_rate(class_="form_field") }}
+        </div>
+        {% endif %}
+        <div class="button_field">
+            {{ form.submit(class="form_field") }}
+        </div>
+    </div>
+</form>
+
+{% endblock %}

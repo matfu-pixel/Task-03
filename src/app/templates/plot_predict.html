@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Predict {% endblock %}
+{% block content %}
+
+<center><img src={{ url_for('plot_img', model_name=model_name) }} width=90%></center>
+<form method='POST' action={{ url_for('plot_predict', data_name=data_name, model_name=model_name) }} enctype="multipart/form-data" class="form-contact">
+    {{ form.csrf_token }}
+    <div class="main_form">
+        <div>
+            {{ form.test.label }}
+            {{ form.test(class_="form_field") }}
+        </div>
+        <div class="button_field">
+            {{ form.submit(class="form_field") }}
+        </div>
+    </div>
+</form>
+
+{% endblock %}

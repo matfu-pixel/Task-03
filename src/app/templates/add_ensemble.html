@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} Add model page {% endblock %}
+{% block content %}
+
+<form method='POST' action={{ url_for('add_model') }}>
+    {{ form.csrf_token }}
+    <div class="main_form">
+        <div>
+            {{ form.name.label }}
+            {{ form.name(class_="form_field") }}
+        </div>
+        <div>
+            {{ form.type.label }}
+            {{ form.type(class_="form_field") }}
+        </div>
+        <div class="button_field">
+            {{ form.submit(class="form_field") }}
+        </div>
+    </div>
+</form>
+
+{% endblock %}
