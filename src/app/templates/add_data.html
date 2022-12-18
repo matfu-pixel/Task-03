@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %} Add data page {% endblock %}
+{% block content %}
+
+<form method='POST' action={{ url_for('add_data', error=error) }} enctype="multipart/form-data" class="form-contact">
+    {{ form.csrf_token }}
+    <div class="main_form">
+        <div>
+            {{ form.name.label }}
+            {{ form.name(class_="form_field") }}
+        </div>
+        <div>
+            {{ form.data_train.label }}
+            {{ form.data_train(class_="form_field") }}
+        </div>
+        <div>
+            {{ form.data_val.label }}
+            {{ form.data_val(class_="form_field") }}
+        </div>
+        <div>
+            {{ form.target_name.label }}
+            {{ form.target_name(class="form_field") }}
+        </div>
+        {% if error == "True" %}
+            <div class="error">Check: <br> * Train and val have the same format
+            <br> * Datasets have only numeric features <br>
+            * Target is in both datasets</div>
+        {% endif %}
+        <div class="button_field">
+            {{ form.submit(class="form_field") }}
+        </div>
+    </div>
+</form>
+
+{% endblock %}
