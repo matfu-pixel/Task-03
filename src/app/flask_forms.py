@@ -12,10 +12,11 @@ class FileForm(FlaskForm):
         FileAllowed(['csv'], 'Only .csv files!')
     ])
     data_val = FileField('Load validation dataset:', validators=[
+        Optional(),
         FileAllowed(['csv'], 'Only .csv files!')
     ])
     target_name = StringField('Target name:', validators=[
-        Optional()
+        DataRequired()
     ])
     submit = SubmitField('Add data')
 
