@@ -2,10 +2,11 @@
 
 {% block title %}Main page{% endblock %}
 {% block content %}
-    <h3>Web service for working with ensembles of algorithms</h3>
-    <p>Information on working with the service will be located here.</p>
-
-    <h3>One more title</h3>
-    <p>One more paragraph</p>
+    <center><img src="{{ url_for('static', filename='images/strong_tree.jpg') }}" width=50%></center>
+    <h3>Purpose</h3>
+    <p>The purpose of this service is to simplify the work with ensembles of algorithms for a person who does not know python or another programming language, but who has data on which he wants to train a Random Forest or Gradient boosting.</p>
+    <h3>How to use</h3>
+    <p>Data can be added using the "Add data" button, and models can be added using the "Add model" button. Both models and data can be added many times. By clicking the "Model training" button, the user can select a pair: a model and data, for further training and obtaining predictions.</p>
+    <p>The implementations of all algorithms were made independently by the author.</p>
 
 {% endblock %}
