@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} Fitting model {% endblock %}
+{% block content %}
+
+<form method='POST' action={{ url_for('choose_model_data') }} enctype="multipart/form-data" class="form-contact">
+    <div class="main_form">
+        <div>
+            {{ form.data.label }}
+            {{ form.data(class_="form_field") }}
+        </div>
+        <div>
+            {{ form.model.label }}
+            {{ form.model(class_="form_field") }}
+        </div>
+        <div class="button_field">
+            {{ form.submit(class="form_field") }}
+        </div>
+    </div>
+</form>
+
+{% endblock %}

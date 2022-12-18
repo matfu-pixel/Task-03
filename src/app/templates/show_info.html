@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Fitting model {% endblock %}
+{% block content %}
+
+
+<form method='POST' action={{ url_for('show_info', data_name=data_name, model_name=model_name, error=error) }} enctype="multipart/form-data" class="form-contact">
+    {{ form.csrf_token }}
+    <div class="main_form">
+        <center><div>{{ model.info.to_html(index=False) | safe }}</div></center>
+        {% if error == "True" %}
+            <div class="error">* The feature_subsample_size is bigger then the number of features in dataset! Change the model or data!</div>
+        {% endif %}
+        <div class="button_field">
+            {{ form.submit(class="form_field") }}
+        </div>
+    </div>
+</form>
+
+{% endblock %}

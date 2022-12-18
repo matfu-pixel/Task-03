@@ -1,0 +1,8 @@
+Flask
+Flask-WTF
+matplotlib
+numpy
+pandas
+scikit-learn
+scipy
+WTForms
