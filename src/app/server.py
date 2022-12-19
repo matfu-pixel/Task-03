@@ -155,7 +155,7 @@ def plot_predict(data_name=None, model_name=None):
         return render_template('plot_predict.html', form=form, menu=menu, page_title="Make prediction", data_name=data_name, model_name=model_name)
     except Exception as exc:
         app.logger.info('Exception: {0}'.format(exc))
-        return redirect(url_for('show_info', data_name=data_name, model_name=model_name, error=True))
+        return redirect(url_for('plot_predict', data_name=data_name, model_name=model_name))
 
 
 @app.route('/plot_img/<model_name>')

@@ -31,13 +31,13 @@ class SelectModelForm(FlaskForm):
 
 class SelectHyperForm(FlaskForm):
     n_estimators = IntegerField('Number of trees in ensemble:',
-                                validators=[DataRequired(), NumberRange(min=1, max=1000)], default=100)
+                                validators=[DataRequired(), NumberRange(min=1, max=10000)], default=100)
     feature_subsample_size = IntegerField('Maximum number of features:',
                                            validators=[DataRequired(), NumberRange(min=1, max=1000)], default=10)
     max_depth = IntegerField('Maximum depth:',
                              validators=[DataRequired(), NumberRange(min=1, max=100)], default=10)
     learning_rate = FloatField('Learning rate:',
-                               validators=[DataRequired()], default=0.1)
+                               validators=[DataRequired(), NumberRange(min=0.00001, max=1)], default=0.1)
     submit = SubmitField('Add model')
 
 class ChooseModelAndDataForm(FlaskForm):
