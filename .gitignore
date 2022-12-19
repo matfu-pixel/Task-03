@@ -2,3 +2,5 @@ venv
 src/app/__pycache__
 src/ensembles/__pycache__
 src/app/tmp
+src/app/ensembles/__pycache__/
+tmp/

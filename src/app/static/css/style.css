@@ -76,6 +76,7 @@ nav a:hover {
     padding: 15px;
     width: 50%;
     margin: 15px 2%;
+    margin-bottom: 100px;
     box-shadow: 4px 4px 4px #3C3F35;
     border-radius: 5px;
 }
