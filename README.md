@@ -7,6 +7,9 @@
 
 ## Работа с сервисом
 
+### 0. Главная
+![alt text](https://github.com/matfu-pixel/Task-03/blob/description/images/0.png)
+
 ### 1. Загрузка модели
 ![alt text](https://github.com/matfu-pixel/Task-03/blob/description/images/1.png)
 ![alt text](https://github.com/matfu-pixel/Task-03/blob/description/images/2.png)
